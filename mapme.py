@@ -4,20 +4,20 @@ Quickly pull up Google Maps directions for a given location. Idea originated her
 
 import webbrowser, sys, pyperclip
 
-initialprompt = input("Are you starting from Mapfre Stadium? y/n ")
+initialprompt = raw_input("Are you starting from Mapfre Stadium? y/n ")
 
 if initialprompt == 'y':
     startingaddress = "One Black & Gold Blvd, Columbus, OH"
 elif initialprompt == 'n':
-    startingaddress = input("What's the address you're starting from? " )
+    startingaddress = raw_input("What's the address you're starting from? " )
 
 if pyperclip.paste() != '':
     if pyperclip.paste().isdigit():
         address = pyperclip.paste()
     else:
-        address = input("Please enter destination address. ")
+        address = raw_input("Please enter destination address. ")
 else:
-    address = input("Please enter destination address. ")
+    address = raw_input("Please enter destination address. ")
 
 
 webbrowser.open('https://www.google.com/maps/dir/' + startingaddress + '/' + address)
